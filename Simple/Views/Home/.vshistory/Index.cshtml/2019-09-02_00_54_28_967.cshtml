@@ -5,13 +5,12 @@
 @*◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘*@
 <article id="modal-placeholder"></article>
 <button type="button"
-        class="btn btn-info"
+        class="btn btn-primary"
         data-toggle="ajax-modal"
         data-target="#add-contact"
         data-url="@Url.Action("Contact")">
     Add contact
 </button>
-<hr />
 @*◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘*@
 <form asp-action="PersonForm" asp-controller="Home"
       data-ajax="true" data-ajax-method="POST" data-ajax-mode="replace" data-ajax-update="#PersonFormResult">
@@ -36,7 +35,7 @@
     </div>
 </form>
 <hr />
-<article id="PersonFormResult"></article>
+<article id="PersonFormResult"></article>S
 @*◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘*@
 @section Scripts{
     <partial name="_ValidationScriptsPartial" />

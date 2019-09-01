@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 
 using Simple.Models;
 
@@ -32,14 +32,19 @@ namespace Simple.Controllers
 
             return PartialView("_ContactModalPartial", model);
         }
-        [HttpPost] public IActionResult PersonForm(Person person) => PartialView("_PersonPartial", person);
+
+        [HttpPost]
+        public IActionResult PersonForm(Person person)
+        {
+            return PartialView("_PersonPartial", person);
+        }
 
         [HttpPost]
         public IActionResult CreatePerson(Person model)
         {
             if (!ModelState.IsValid)
             {
-                ModelState.AddModelError("Test", "Model Error List: ♠");
+                ModelState.AddModelError("Test", "Message");
                 return PartialView("_PersonPartial", model);
             }
 

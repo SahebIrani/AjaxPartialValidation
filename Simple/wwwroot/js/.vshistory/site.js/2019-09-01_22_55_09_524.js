@@ -32,7 +32,6 @@ $(function () {
             if (isValid) {
                 placeholderElement.find('.modal').modal('hide');
                 //placeholderElement.modal('hide');
-                //window.location.reload(true);
             }
         });
     });

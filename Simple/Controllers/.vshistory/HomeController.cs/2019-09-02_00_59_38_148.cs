@@ -39,7 +39,7 @@ namespace Simple.Controllers
         {
             if (!ModelState.IsValid)
             {
-                ModelState.AddModelError("Test", "Model Error List: ♠");
+                ModelState.AddModelError("Test", "Model Error List : ♠");
                 return PartialView("_PersonPartial", model);
             }
 

@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 
 using Simple.Models;
 
@@ -39,7 +39,7 @@ namespace Simple.Controllers
         {
             if (!ModelState.IsValid)
             {
-                ModelState.AddModelError("Test", "Model Error List: ♠");
+                ModelState.AddModelError("Test", "Error Message List");
                 return PartialView("_PersonPartial", model);
             }
 

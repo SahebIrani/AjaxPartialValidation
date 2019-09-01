@@ -3,18 +3,17 @@
 @{ ViewData["Title"] = "Contact form"; }
 
 @*◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘*@
-<article id="modal-placeholder"></article>
+<div id="modal-placeholder"></div>
 <button type="button"
-        class="btn btn-info"
+        class="btn btn-primary"
         data-toggle="ajax-modal"
         data-target="#add-contact"
         data-url="@Url.Action("Contact")">
     Add contact
 </button>
-<hr />
 @*◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘*@
 <form asp-action="PersonForm" asp-controller="Home"
-      data-ajax="true" data-ajax-method="POST" data-ajax-mode="replace" data-ajax-update="#PersonFormResult">
+      data-ajax="true" data-ajax-method="POST" data-ajax-mode="replace" data-ajax-update="#ajaxresult">
     <div asp-validation-summary="All" class="text-danger"></div>
     <div class="form-group">
         <label asp-for="FirstName"></label>
@@ -36,7 +35,7 @@
     </div>
 </form>
 <hr />
-<article id="PersonFormResult"></article>
+<div id="ajaxresult"></div>
 @*◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘*@
 @section Scripts{
     <partial name="_ValidationScriptsPartial" />

@@ -17,13 +17,6 @@ $(function () {
         var dataToSend = form.serialize();
         console.log(dataToSend);
 
-        //$.post(actionUrl, dataToSend).done(function (data, textStatus, jqXHR) {
-        //    // determine what was returned from controller
-
-        //    // and perform action e.g. reload modal contents or redirect page
-
-        //});
-
         $.post(actionUrl, dataToSend).done(function (data) {
             var newBody = $('.modal-body', data);
             placeholderElement.find('.modal-body').replaceWith(newBody);
@@ -32,7 +25,6 @@ $(function () {
             if (isValid) {
                 placeholderElement.find('.modal').modal('hide');
                 //placeholderElement.modal('hide');
-                //window.location.reload(true);
             }
         });
     });
