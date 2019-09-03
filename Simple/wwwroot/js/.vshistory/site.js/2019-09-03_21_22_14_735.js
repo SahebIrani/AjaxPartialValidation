@@ -1,13 +1,14 @@
 ﻿$(function () {
 
+    var gobtn = $('#go-btn');
+    var placeholderElement = $('#modal-test');
     $('#go-btn').click(function (event) {
-        $.get('/Home/TestModal').done(function (data) {
-            $('#modal-test').html(data);
-            $('#add-person').modal('show');
-        });
+        placeholderElement.find('.modal').modal('show');
     });
 
     //◘◘◘◘
+
+    placeholderElement.find('.modal').modal('show');
 
     var placeholderElement = $('#modal-placeholder');
 

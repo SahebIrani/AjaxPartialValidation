@@ -1,14 +1,4 @@
-﻿$(function () {
-
-    $('#go-btn').click(function (event) {
-        $.get('/Home/TestModal').done(function (data) {
-            $('#modal-test').html(data);
-            $('#add-person').modal('show');
-        });
-    });
-
-    //◘◘◘◘
-
+$(function () {
     var placeholderElement = $('#modal-placeholder');
 
     $('button[data-toggle="ajax-modal"]').click(function (event) {

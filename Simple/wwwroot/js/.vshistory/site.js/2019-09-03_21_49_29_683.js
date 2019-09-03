@@ -1,13 +1,19 @@
 ﻿$(function () {
 
-    $('#go-btn').click(function (event) {
+    var gobtn = $('#go-btn');
+    var addperson = $('#add-person');
+    var modaltest = $('#modal-test');
+    gobtn.click(function (event) {
+        addperson.modal('show');
         $.get('/Home/TestModal').done(function (data) {
-            $('#modal-test').html(data);
-            $('#add-person').modal('show');
+            alert(data);
+            modaltest.html(data);
         });
     });
 
     //◘◘◘◘
+
+    placeholderElement.find('.modal').modal('show');
 
     var placeholderElement = $('#modal-placeholder');
 

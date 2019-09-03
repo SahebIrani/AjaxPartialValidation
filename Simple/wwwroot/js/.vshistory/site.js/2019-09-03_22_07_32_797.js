@@ -1,13 +1,26 @@
 ﻿$(function () {
 
-    $('#go-btn').click(function (event) {
+    var gobtn = $('#go-btn');
+    var addperson = $('#add-person');
+    var modaltest = $('#modal-test');
+    gobtn.click(function (event) {
+        addperson.modal('show');
         $.get('/Home/TestModal').done(function (data) {
-            $('#modal-test').html(data);
-            $('#add-person').modal('show');
+            console.log(data);
+            if (data === "YES") {
+                alert('YES');
+                console.log('YES');
+                addperson.modal('hide');
+            }
+            else {
+                modaltest.html(data);
+            }
         });
     });
 
     //◘◘◘◘
+
+    placeholderElement.find('.modal').modal('show');
 
     var placeholderElement = $('#modal-placeholder');
 

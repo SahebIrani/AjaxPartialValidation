@@ -62,7 +62,7 @@ namespace Simple.Controllers
                 return PartialView("_TestModal", model);
             }
 
-            return Ok("<p class='text-center text-success'> .. عملیات با موفقیت انجام شد </p>");
+            return RedirectToAction(nameof(Index));
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
