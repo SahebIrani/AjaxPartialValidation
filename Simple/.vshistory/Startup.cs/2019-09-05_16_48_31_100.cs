@@ -13,10 +13,7 @@ namespace Simple
 {
     public class Startup
     {
-        public Startup(IWebHostEnvironment environment) => Environment = environment;
-        public IWebHostEnvironment Environment { get; }
-
-        public void ConfigureServices(IServiceCollection services)
+        public void ConfigureServices(IServiceCollection services, IWebHostEnvironment environment)
         {
             services.AddControllersWithViews(options =>
             {
@@ -24,14 +21,14 @@ namespace Simple
                 //options.AllowValidatingTopLevelNodes = false;
 
                 options.ModelBindingMessageProvider
-                    .SetMissingBindRequiredValueAccessor((_) => "field {0} Khaliye .. !!!!");
+                    .SetMissingBindRequiredValueAccessor((_) => "{0} Khaliye .. !!!!");
 
                 options.ModelBindingMessageProvider.SetValueMustNotBeNullAccessor(
-                    (_) => "field {0} Ejbariye .. !!!!");
+                    (_) => "field {0} ejbariye .. !!!!");
             })
             .AddViewOptions(options =>
             {
-                if (Environment.IsDevelopment())
+                if (environment.IsDevelopment())
                 {
                     options.HtmlHelperOptions.ClientValidationEnabled = true;
                 }
@@ -56,7 +53,7 @@ namespace Simple
 
             //services.Configure<MvcViewOptions>(options =>
             //{
-            //    if (Environment.IsDevelopment())
+            //    if (environment.IsDevelopment())
             //    {
             //        options.HtmlHelperOptions.ClientValidationEnabled = false;
             //    }

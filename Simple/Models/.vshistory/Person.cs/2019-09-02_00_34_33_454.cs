@@ -1,24 +1,17 @@
-using Simple.Attributes;
-
-using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace Simple.Models
 {
     public class Person
     {
-        [Required]
+        [Required(ErrorMessage = "{0} Khaliye ..")]
         public string FirstName { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "{0} Khaliye ..")]
         public string LastName { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "{0} Khaliye ..")]
         [EmailAddress(ErrorMessage = "{0} Valid Nist ..")]
         public string Email { get; set; }
-
-        [People(1998)]
-        [DataType(DataType.Date)]
-        public DateTime BirthDate { get; set; }
     }
 }

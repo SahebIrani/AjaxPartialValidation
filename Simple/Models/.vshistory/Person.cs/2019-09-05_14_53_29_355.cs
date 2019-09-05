@@ -1,6 +1,3 @@
-using Simple.Attributes;
-
-using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace Simple.Models
@@ -14,11 +11,7 @@ namespace Simple.Models
         public string LastName { get; set; }
 
         [Required]
-        [EmailAddress(ErrorMessage = "{0} Valid Nist ..")]
+        [EmailAddress]
         public string Email { get; set; }
-
-        [People(1998)]
-        [DataType(DataType.Date)]
-        public DateTime BirthDate { get; set; }
     }
 }

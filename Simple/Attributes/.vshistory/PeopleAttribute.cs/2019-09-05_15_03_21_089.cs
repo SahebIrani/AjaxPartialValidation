@@ -1,0 +1,33 @@
+using Simple.Models;
+
+using System;
+using System.ComponentModel.DataAnnotations;
+
+namespace Simple.Attributes
+{
+    public class PeopleAttribute : ValidationAttribute
+    {
+        public PeopleAttribute(int year) => _year = year;
+        private int _year;
+
+        protected override ValidationResult IsValid(object value, ValidationContext validationContext)
+        {
+            var person = (Person)validationContext.ObjectInstance;
+            var releaseYear = ((DateTime)value).Year;
+
+            if (releaseYear > _year)
+            {
+                return new ValidationResult(GetErrorMessage());
+            }
+
+            return ValidationResult.Success;
+        }
+
+        public int Year => _year;
+
+        public string GetErrorMessage()
+        {
+            return $"Classic movies must have a release year no later than {_year}.";
+        }
+    }
+}

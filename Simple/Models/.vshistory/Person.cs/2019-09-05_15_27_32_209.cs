@@ -17,7 +17,7 @@ namespace Simple.Models
         [EmailAddress(ErrorMessage = "{0} Valid Nist ..")]
         public string Email { get; set; }
 
-        [People(1998)]
+        [People(year: 1998)]
         [DataType(DataType.Date)]
         public DateTime BirthDate { get; set; }
     }
